@@ -28,7 +28,7 @@ compileJava {
 }
 
 checkstyle {
-    toolVersion = '10.2'
+    toolVersion "10.3.1"
 }
 
 jacocoTestReport {
