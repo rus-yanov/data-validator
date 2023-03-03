@@ -6,6 +6,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import hexlet.code.schemas.StringSchema;
 import hexlet.code.schemas.NumberSchema;
 
+import java.util.HashMap;
+import java.util.Map;
+
 class ValidatorTest {
 
     @Test
@@ -55,5 +58,27 @@ class ValidatorTest {
         assertThat(schema.isValid(5)).isTrue();
         assertThat(schema.isValid(4)).isFalse();
         assertThat(schema.isValid(11)).isFalse();
+    }
+
+    @Test
+    public void testMap() {
+        Validator v = new Validator();
+        MapSchema schema = v.map();
+
+        assertThat(schema.isValid(null)).isTrue();
+
+        schema.required();
+        assertThat(schema.isValid(null)).isFalse();
+        assertThat(schema.isValid(new HashMap())).isTrue();
+
+        Map<String, String> data = new HashMap<>();
+
+        data.put("key1", "value1");
+        assertThat(schema.isValid(data)).isTrue();
+
+        schema.sizeof(2);
+        assertThat(schema.isValid(data)).isFalse();
+        data.put("key2", "value2");
+        assertThat(schema.isValid(data)).isTrue();
     }
 }
