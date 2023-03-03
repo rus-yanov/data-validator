@@ -19,19 +19,4 @@ public class StringSchema extends BaseSchema {
         addValid(contains);
         return this;
     }
-
-    public boolean isValid(Object obj) {
-        if (!isRequired() && (obj == null || obj.equals(""))) {
-            return true;
-        } else if (isRequired() && (obj == null || obj.equals(""))) {
-            return false;
-        } else {
-            for (Predicate pred : getValid()) {
-                if (!pred.test(obj)) {
-                    return false;
-                }
-            }
-            return true;
-        }
-    }
 }

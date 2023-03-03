@@ -19,19 +19,4 @@ public class NumberSchema extends BaseSchema {
         Predicate<Integer> range = x -> x <= max && x >= min;
         addValid(range);
     }
-
-    public boolean isValid(Object obj) {
-        if (!isRequired() && (obj == null)) {
-            return true;
-        } else if (isRequired() && (obj == null)) {
-            return false;
-        } else {
-            for (Predicate pred : getValid()) {
-                if (!pred.test(obj)) {
-                    return false;
-                }
-            }
-            return true;
-        }
-    }
 }
