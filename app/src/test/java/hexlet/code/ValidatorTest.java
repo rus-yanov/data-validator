@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import hexlet.code.schemas.StringSchema;
-
+import hexlet.code.schemas.NumberSchema;
 
 class ValidatorTest {
 
@@ -23,6 +23,10 @@ class ValidatorTest {
         assertThat(schema.isValid("")).isFalse();
         assertThat(schema.isValid(null)).isFalse();
         assertThat(schema.isValid(777)).isFalse();
+
+        schema.minLength(7);
+        assertThat(schema.isValid("123456")).isFalse();
+        assertThat(schema.isValid("1234567")).isTrue();
 
         assertThat(schema.contains("what").isValid("what does the fox say")).isTrue();
         assertThat(schema.contains("the fox").isValid("what does the fox say")).isTrue();
