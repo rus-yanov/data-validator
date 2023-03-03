@@ -12,8 +12,9 @@ public class BaseSchema {
     public boolean isRequired() {
         return isRequired;
     }
-    public void required() {
+    public BaseSchema required() {
         this.isRequired = true;
+        return this;
     }
 
     public List<Predicate> getValid() {
