@@ -7,7 +7,6 @@ import hexlet.code.schemas.StringSchema;
 import hexlet.code.schemas.NumberSchema;
 import hexlet.code.schemas.MapSchema;
 import hexlet.code.schemas.BaseSchema;
-import hexlet.code.Validator;
 
 import java.util.HashMap;
 import java.util.Map;
