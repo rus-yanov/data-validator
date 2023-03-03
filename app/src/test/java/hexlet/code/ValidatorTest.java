@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import hexlet.code.schemas.StringSchema;
 import hexlet.code.schemas.NumberSchema;
+import hexlet.code.schemas.MapSchema;
 
 import java.util.HashMap;
 import java.util.Map;
