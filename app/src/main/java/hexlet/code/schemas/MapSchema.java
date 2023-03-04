@@ -10,6 +10,11 @@ public class MapSchema extends BaseSchema {
         addValid(isMap);
     }
 
+    public MapSchema required() {
+        setRequired(true);
+        return this;
+    }
+
     public void sizeof(int size) {
         Predicate<Map<?, ?>> requiredSize = x -> x.size() == size;
         addValid(requiredSize);

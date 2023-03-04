@@ -9,6 +9,11 @@ public class StringSchema extends BaseSchema {
         addValid(isString);
     }
 
+    public StringSchema required() {
+        setRequired(true);
+        return this;
+    }
+
     public void minLength(int num) {
         Predicate<String> minLength = x -> x.length() >= num;
         addValid(minLength);

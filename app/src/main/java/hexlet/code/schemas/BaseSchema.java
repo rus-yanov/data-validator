@@ -6,20 +6,19 @@ import java.util.function.Predicate;
 
 public class BaseSchema {
 
-    private final List<Predicate> validStuff = new ArrayList<>();
+    private final List<Predicate> checks = new ArrayList<>();
     private boolean isRequired = false;
 
-    public BaseSchema required() {
-        this.isRequired = true;
-        return this;
+    public void setRequired(boolean required) {
+        isRequired = required;
     }
 
     public List<Predicate> getValid() {
-        return validStuff;
+        return checks;
     }
 
     public void addValid(Predicate predicate) {
-        validStuff.add(predicate);
+        checks.add(predicate);
     }
 
     public boolean isValid(Object obj) {

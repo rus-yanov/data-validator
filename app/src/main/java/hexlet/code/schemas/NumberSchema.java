@@ -9,6 +9,11 @@ public class NumberSchema extends BaseSchema {
         addValid(isNumber);
     }
 
+    public NumberSchema required() {
+        setRequired(true);
+        return this;
+    }
+
     public NumberSchema positive() {
         Predicate<Integer> isPositive = x -> x > 0;
         addValid(isPositive);
