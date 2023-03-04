@@ -4,8 +4,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/09d9341787c30639a6eb/maintainability)](https://codeclimate.com/github/rus-yanov/java-project-78/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/09d9341787c30639a6eb/test_coverage)](https://codeclimate.com/github/rus-yanov/java-project-78/test_coverage)
 
-<h1><b>Data validator</b></h1>
+<h2><b>Data validator</b></h2>
 <p>Data Validator is a tool for checking the accuracy and consistency of values during runtime. It allows users to create a schema to define, transform, and verify values, ensuring that the values meet the desired format and requirements. This validator is able to check the correctnes of ints, strings and maps.</p>
+<p><b>Stack:</b> OOP, SOLID, JUnit, TDD, DSL.</p>
 <h2><b>Number validation</b></h2>
 <ul>
   <li>required - any number including zero</li>
