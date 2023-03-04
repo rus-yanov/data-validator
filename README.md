@@ -100,7 +100,7 @@ schema.isValid(data); // true
 ```
 
 <h2><b>Nested Validation</b></h2>
-<p>When working with complex data, it may be necessary to check not only the Map object itself, but also the data inside it.</p>
+<p>When working with complex data, it may be necessary to check not only the Map object itself, but also the data inside</p>
 <ul>
   <li>shape - allows to describe validation for Map object values by keys</li>
 </ul>
