@@ -4,24 +4,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-public abstract class BaseSchema {
+public class BaseSchema {
 
     private final List<Predicate> predicates = new ArrayList<>();
     private boolean isRequired = false;
 
-    public void setRequired(boolean required) {
+    public final void setRequired(boolean required) {
         isRequired = required;
     }
 
-    public List<Predicate> getPredicate() {
+    public final List<Predicate> getPredicate() {
         return predicates;
     }
 
-    public void addPredicate(Predicate predicate) {
+    public final void addPredicate(Predicate predicate) {
         predicates.add(predicate);
     }
 
-    public boolean isValid(Object obj) {
+    public final boolean isValid(Object obj) {
         if (!isRequired && (obj == null || obj.equals(""))) {
             return true;
         } else if (isRequired && (obj == null || obj.equals(""))) {
