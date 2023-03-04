@@ -90,7 +90,7 @@ class ValidatorTest {
         MapSchema schema = v.map();
 
         Map<String, BaseSchema> schemas = new HashMap<>();
-        schemas.put("name", v.string().required());
+        schemas.put("name", v.string().required().contains("ya"));
         schemas.put("age", v.number().positive());
         schema.shape(schemas);
 
@@ -113,5 +113,10 @@ class ValidatorTest {
         human4.put("name", "Valya");
         human4.put("age", -5);
         assertThat(schema.isValid(human4)).isFalse();
+
+        Map<String, Object> human5 = new HashMap<>();
+        human4.put("last name", "Korinevskaya");
+        human4.put("age", 53);
+        assertThat(schema.isValid(human5)).isFalse();
     }
 }
