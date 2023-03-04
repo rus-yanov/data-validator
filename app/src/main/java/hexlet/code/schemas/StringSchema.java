@@ -6,7 +6,7 @@ public final class StringSchema extends BaseSchema {
 
     public StringSchema() {
         Predicate<Object> isString = x -> x instanceof String;
-        addValid(isString);
+        addPredicate(isString);
     }
 
     public StringSchema required() {
@@ -16,12 +16,12 @@ public final class StringSchema extends BaseSchema {
 
     public void minLength(int num) {
         Predicate<String> minLength = x -> x.length() >= num;
-        addValid(minLength);
+        addPredicate(minLength);
     }
 
     public StringSchema contains(String str) {
         Predicate<String> contains = x -> x.contains(str);
-        addValid(contains);
+        addPredicate(contains);
         return this;
     }
 }

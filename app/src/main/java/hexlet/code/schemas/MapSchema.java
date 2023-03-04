@@ -7,7 +7,7 @@ public final class MapSchema extends BaseSchema {
 
     public MapSchema() {
         Predicate<Object> isMap = x -> x instanceof Map<?, ?>;
-        addValid(isMap);
+        addPredicate(isMap);
     }
 
     public MapSchema required() {
@@ -17,12 +17,12 @@ public final class MapSchema extends BaseSchema {
 
     public void sizeof(int size) {
         Predicate<Map<?, ?>> requiredSize = x -> x.size() == size;
-        addValid(requiredSize);
+        addPredicate(requiredSize);
     }
 
     public void shape(Map<?, BaseSchema> schemas) {
         Predicate<Map<?, ?>> shape = x -> validateValue(x, schemas);
-        addValid(shape);
+        addPredicate(shape);
     }
 
     public boolean validateValue(Map<?, ?> data, Map<?, BaseSchema> schemas) {

@@ -6,7 +6,7 @@ public final class NumberSchema extends BaseSchema {
 
     public NumberSchema() {
         Predicate<Object> isNumber = x -> x instanceof Integer;
-        addValid(isNumber);
+        addPredicate(isNumber);
     }
 
     public NumberSchema required() {
@@ -16,12 +16,12 @@ public final class NumberSchema extends BaseSchema {
 
     public NumberSchema positive() {
         Predicate<Integer> isPositive = x -> x > 0;
-        addValid(isPositive);
+        addPredicate(isPositive);
         return this;
     }
 
     public void range(int min, int max) {
         Predicate<Integer> range = x -> x <= max && x >= min;
-        addValid(range);
+        addPredicate(range);
     }
 }
